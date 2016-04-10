@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		
+			function reload(num) {	
+				document.getElementById(""+num).src = "/?i=" + num + "&t=" + new Date();
+				//document.getElementById(""+num).addEventListener('load', function() {	
+				console.log("reloaded: " + num);
+				setTimeout(function() { reload(num); }, 100);
+				//});
+			}
+
+			window.addEventListener('load', function() {
+
+				reload(0);
+				reload(1);
+				reload(2);
+				reload(3);
+			});
+		</script>
+	</head>
+	<body>
+		<img id="0" src="/?i=0">
+		<img id="1" src="/?i=1">
+		<img id="2" src="/?i=2">
+		<img id="3" src="/?i=3">
+	</body>
+</html>
